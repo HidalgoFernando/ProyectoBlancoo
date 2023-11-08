@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     TextView detalles;
-    Button Deslog;
+    Button Deslog, vertarjeta, agregartarjeta;
     FirebaseUser usuario;
 
 
@@ -29,7 +29,27 @@ public class MainActivity extends AppCompatActivity {
         Deslog = findViewById(R.id.Deslogear);
         detalles = findViewById(R.id.detalles);
         usuario = auth.getCurrentUser();
+        vertarjeta = findViewById(R.id.button2);
+        agregartarjeta = findViewById(R.id.button3);
 
+
+        vertarjeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MisTarjetas.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        agregartarjeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AgregarTarjeta.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         if (usuario == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);

@@ -89,7 +89,7 @@ public class Register extends AppCompatActivity {
 
                                     Toast.makeText(Register.this, "Cuenta creada.",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                                    Intent intent = new Intent(getApplicationContext(), MisDatos.class);
                                     startActivity(intent);
                                     finish();
 

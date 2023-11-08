@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "300111572613",
+    "project_id": "proyectoblanco-e3bf5",
+    "storage_bucket": "proyectoblanco-e3bf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300111572613:android:2f2e87d84bbddcc3f603ec",
+        "android_client_info": {
+          "package_name": "com.example.proyectoblanco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi0fy_QUjAlU2Z8YeCdOXSflht-dngcuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

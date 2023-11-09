@@ -14,7 +14,6 @@ public class TarjetaAdapter extends RecyclerView.Adapter<TarjetaAdapter.TarjetaV
     private List<Tarjeta> tarjetasList;
     private MisTarjetas.OnEliminarTarjetaListener eliminarTarjetaListener;
 
-    // Constructor que recibe la lista de tarjetas y el listener
     public TarjetaAdapter(List<Tarjeta> tarjetasList, MisTarjetas.OnEliminarTarjetaListener eliminarTarjetaListener) {
         this.tarjetasList = tarjetasList;
         this.eliminarTarjetaListener = eliminarTarjetaListener;
@@ -58,7 +57,7 @@ public class TarjetaAdapter extends RecyclerView.Adapter<TarjetaAdapter.TarjetaV
         public void bindTarjeta(Tarjeta tarjeta) {
             numeroTarjetaTextView.setText(tarjeta.getNumeroTarjeta());
 
-            idDocumentoTextView.setText("" + tarjeta.getFecha());
+            idDocumentoTextView.setText(tarjeta.getFecha());
         }
     }
 }

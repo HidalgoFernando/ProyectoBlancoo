@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     TextView detalles;
-    Button Deslog, vertarjeta, agregartarjeta;
+    Button Deslog, vertarjeta, agregartarjeta, Lector;
     FirebaseUser usuario;
 
 
@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         usuario = auth.getCurrentUser();
         vertarjeta = findViewById(R.id.button2);
         agregartarjeta = findViewById(R.id.button3);
+        Lector = findViewById(R.id.button6);
+
+        Lector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LectorTarjeta.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         vertarjeta.setOnClickListener(new View.OnClickListener() {

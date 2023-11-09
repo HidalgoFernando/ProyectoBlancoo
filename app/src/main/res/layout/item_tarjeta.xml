@@ -54,7 +54,7 @@
                 android:layout_toEndOf="@+id/iconImageView"
                 android:layout_alignParentEnd="true" />
             <TextView
-                android:id="@+id/nameTextView"
+                android:id="@+id/fechaTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numeroTarjetaTextView"

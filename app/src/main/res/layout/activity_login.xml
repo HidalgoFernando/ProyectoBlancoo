@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Login">
 
     <TextView
@@ -12,7 +13,8 @@
         android:layout_height="34dp"
         android:text="Click si no tienes cuenta"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="17sp"
+        android:textColor="#EE82EE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -31,12 +33,12 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
 
-
     <Button
         android:id="@+id/botonlogin"
         android:layout_width="149dp"
         android:layout_height="51dp"
-        android:text="Button"
+        android:background="@drawable/degradebuttom"
+        android:text="Iniciar Sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.519"
@@ -48,9 +50,11 @@
         android:id="@+id/textViewlogin"
         android:layout_width="139dp"
         android:layout_height="53dp"
+        android:fontFamily="@font/abel"
         android:text="LOGIN"
         android:textAlignment="center"
         android:textSize="34sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +66,7 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:fontFamily="@font/abel"
         android:hint="Correo"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +81,7 @@
         android:layout_width="246dp"
         android:layout_height="49dp"
         android:ems="10"
+        android:fontFamily="@font/abel"
         android:hint="Contrasena"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,4 +90,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.426" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

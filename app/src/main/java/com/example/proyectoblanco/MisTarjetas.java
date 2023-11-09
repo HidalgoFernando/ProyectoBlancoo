@@ -29,7 +29,6 @@ public class MisTarjetas extends AppCompatActivity {
     private TarjetaAdapter adapter;
     private List<Tarjeta> tarjetasList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +43,10 @@ public class MisTarjetas extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
         adapter = new TarjetaAdapter(tarjetasList);
         recyclerView.setAdapter(adapter);
-
-
-
         obtenerTarjetas();
     }
-
     private void obtenerTarjetas() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
@@ -64,12 +58,12 @@ public class MisTarjetas extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                     if (task.isSuccessful()) {
-                        tarjetasList.clear(); // Borra las tarjetas existentes antes de agregar nuevas
+                        tarjetasList.clear();
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            Tarjeta tarjeta = document.toObject(Tarjeta.class); // Supongamos que tienes una clase Tarjeta para representar los datos
+                            Tarjeta tarjeta = document.toObject(Tarjeta.class);
                             tarjetasList.add(tarjeta);
                         }
-                        adapter.notifyDataSetChanged(); // Notificar al adaptador que los datos han cambiado
+                        adapter.notifyDataSetChanged();
                     } else {
                         Toast.makeText(MisTarjetas.this, "Error al obtener las tarjetas", Toast.LENGTH_SHORT).show();
                     }

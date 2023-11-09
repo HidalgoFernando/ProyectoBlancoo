@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -67,18 +66,20 @@ public class AgregarTarjeta extends AppCompatActivity {
     private void agregarTarjetaFirestore(String numeroTarjeta) {
         String correoUsuario = mAuth.getCurrentUser().getEmail();
         DocumentReference usuarioRef = db.collection("usuarios").document(correoUsuario);
-        // Generar el ID del documento con el formato "TarjetaX" donde X es el contadorTarjetas
+
         String idDocumento = "Tarjeta" + (++contadorTarjetas);
+
+        Tarjeta nuevaTarjeta = new Tarjeta(numeroTarjeta, idDocumento);
+
         // Agregar el documento en la subcolección "Mis_tarjetas"
         usuarioRef.collection("Mis_tarjetas")
                 .document(idDocumento)
-                .set(new Tarjeta(numeroTarjeta)) // Tarjeta es una clase que representaría los datos de la tarjeta
+                .set(nuevaTarjeta)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(AgregarTarjeta.this, "Tarjeta agregada correctamente", Toast.LENGTH_SHORT).show();
-                            // Limpiar el campo de entrada para agregar más tarjetas si es necesario
                             numero.setText("");
                         } else {
                             Toast.makeText(AgregarTarjeta.this, "Error al agregar la tarjeta", Toast.LENGTH_SHORT).show();
@@ -86,4 +87,5 @@ public class AgregarTarjeta extends AppCompatActivity {
                     }
                 });
     }
+
 }

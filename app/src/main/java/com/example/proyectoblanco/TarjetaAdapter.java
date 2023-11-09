@@ -37,14 +37,18 @@ public class TarjetaAdapter extends RecyclerView.Adapter<TarjetaAdapter.TarjetaV
     public class TarjetaViewHolder extends RecyclerView.ViewHolder {
 
         private TextView numeroTarjetaTextView;
+        private TextView idDocumentoTextView;
 
         public TarjetaViewHolder(View itemView) {
             super(itemView);
             numeroTarjetaTextView = itemView.findViewById(R.id.numeroTarjetaTextView);
+            idDocumentoTextView = itemView.findViewById(R.id.nameTextView);
         }
 
         public void bindTarjeta(Tarjeta tarjeta) {
             numeroTarjetaTextView.setText(tarjeta.getNumeroTarjeta());
+
+            idDocumentoTextView.setText("" + tarjeta.getIdDocumento());
         }
     }
 }

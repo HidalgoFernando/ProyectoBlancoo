@@ -2,20 +2,26 @@ package com.example.proyectoblanco;
 
 public class Tarjeta {
     private String numeroTarjeta;
+    private String idDocumento;
 
     public Tarjeta() {
-        // Constructor vacío requerido para Firestore
+
     }
 
     public Tarjeta(String numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
 
+    public Tarjeta(String numeroTarjeta, String idDocumento) {
+        this.numeroTarjeta = numeroTarjeta;
+        this.idDocumento = idDocumento;
+    }
+
     public String getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public void setNumeroTarjeta(String numeroTarjeta) {
-        this.numeroTarjeta = numeroTarjeta;
+    public String getIdDocumento() {
+        return idDocumento;
     }
 }

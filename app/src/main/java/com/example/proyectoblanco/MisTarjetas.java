@@ -63,7 +63,7 @@ public class MisTarjetas extends AppCompatActivity {
                 DocumentReference tarjetaRef = FirebaseFirestore.getInstance()
                         .collection("usuarios")
                         .document(correoUsuario)
-                        .collection("Mis_tarjetas")
+                        .collection("Mis_Tarjetas")
                         .document(idDocumento);
 
                 // Eliminar el documento de Firestore
@@ -120,7 +120,7 @@ public class MisTarjetas extends AppCompatActivity {
         if (currentUser != null) {
             String correoUsuario = currentUser.getEmail();
             DocumentReference usuarioRef = db.collection("usuarios").document(correoUsuario);
-            CollectionReference tarjetasRef = usuarioRef.collection("Mis_tarjetas");
+            CollectionReference tarjetasRef = usuarioRef.collection("Mis_Tarjetas");
 
             tarjetasRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override

@@ -13,10 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,7 +33,6 @@ public class AgregarTarjeta extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private int contadorTarjetas = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,31 +69,70 @@ public class AgregarTarjeta extends AppCompatActivity {
         });
     }
 
-    private void agregarTarjetaFirestore(String numeroTarjeta) {
+    private void agregarTarjetaFirestore(final String numeroTarjeta) {
         String correoUsuario = mAuth.getCurrentUser().getEmail();
         DocumentReference usuarioRef = db.collection("usuarios").document(correoUsuario);
 
-        // Obtener la fecha y hora actual
-        Date fechaActual = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String fecha = dateFormat.format(fechaActual);
-
-        Tarjeta nuevaTarjeta = new Tarjeta(numeroTarjeta, fecha);
-
-        // Agregar el documento en la subcolección "Mis_tarjetas"
-        usuarioRef.collection("Mis_tarjetas")
-                .document(numeroTarjeta)
-                .set(nuevaTarjeta)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
+        // Realiza una consulta en la colección "Tarjetas" para buscar el número de tarjeta
+        db.collection("Tarjetas")
+                .document(numeroTarjeta)  // Usa el número de tarjeta como ID del documento
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(AgregarTarjeta.this, "Tarjeta agregada correctamente", Toast.LENGTH_SHORT).show();
-                            numero.setText("");
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // El número de tarjeta ya existe en la base de datos
+                                Toast.makeText(AgregarTarjeta.this, "El número de tarjeta ya existe", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // El número de tarjeta no existe, puedes agregarlo
+                                Date fechaActual = new Date();
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                String fecha = dateFormat.format(fechaActual);
+
+                                Tarjeta nuevaTarjeta = new Tarjeta(numeroTarjeta, fecha, correoUsuario);
+
+                                // Agregar el documento en la colección "Tarjetas" con el número de tarjeta como ID
+                                db.collection("Tarjetas")
+                                        .document(numeroTarjeta)
+                                        .set(nuevaTarjeta)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                // Agregar la tarjeta a la subcolección "Mis_Tarjetas" del usuario actual
+                                                usuarioRef.collection("Mis_Tarjetas")
+                                                        .document(numeroTarjeta)
+                                                        .set(nuevaTarjeta)
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void aVoid) {
+                                                                Toast.makeText(AgregarTarjeta.this, "Tarjeta agregada correctamente", Toast.LENGTH_SHORT).show();
+                                                                numero.setText("");
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(new OnFailureListener() {
+                                                            @Override
+                                                            public void onFailure(@NonNull Exception e) {
+                                                                Toast.makeText(AgregarTarjeta.this, "Error al agregar la tarjeta a Mis_Tarjetas", Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        });
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(AgregarTarjeta.this, "Error al agregar la tarjeta a Tarjetas", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }
                         } else {
-                            Toast.makeText(AgregarTarjeta.this, "Error al agregar la tarjeta", Toast.LENGTH_SHORT).show();
+                            // Error al realizar la consulta
+                            Toast.makeText(AgregarTarjeta.this, "Error al verificar el número de tarjeta", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
 }
+

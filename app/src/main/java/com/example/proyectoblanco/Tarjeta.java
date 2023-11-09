@@ -3,18 +3,16 @@ package com.example.proyectoblanco;
 public class Tarjeta {
     private String numeroTarjeta;
     private String fecha;
+    private String correoUsuario;
 
     public Tarjeta() {
 
     }
 
-    public Tarjeta(String numeroTarjeta) {
-        this.numeroTarjeta = numeroTarjeta;
-    }
-
-    public Tarjeta(String numeroTarjeta, String fecha){
+    public Tarjeta(String numeroTarjeta, String fecha, String correoUsuario) {
         this.numeroTarjeta = numeroTarjeta;
         this.fecha = fecha;
+        this.correoUsuario = correoUsuario;
     }
 
     public String getNumeroTarjeta() {
@@ -23,6 +21,10 @@ public class Tarjeta {
 
     public String getFecha() {
         return fecha;
+    }
+
+    public String getCorreoUsuario() {
+        return correoUsuario;
     }
 }
 

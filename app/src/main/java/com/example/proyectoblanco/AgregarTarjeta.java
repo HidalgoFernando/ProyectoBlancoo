@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AgregarTarjeta extends AppCompatActivity {
 
     TextView texto;
@@ -67,13 +70,16 @@ public class AgregarTarjeta extends AppCompatActivity {
         String correoUsuario = mAuth.getCurrentUser().getEmail();
         DocumentReference usuarioRef = db.collection("usuarios").document(correoUsuario);
 
-        String idDocumento = "Tarjeta" + (++contadorTarjetas);
+        // Obtener la fecha y hora actual
+        Date fechaActual = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String fecha = dateFormat.format(fechaActual);
 
-        Tarjeta nuevaTarjeta = new Tarjeta(numeroTarjeta, idDocumento);
+        Tarjeta nuevaTarjeta = new Tarjeta(numeroTarjeta, fecha);
 
         // Agregar el documento en la subcolección "Mis_tarjetas"
         usuarioRef.collection("Mis_tarjetas")
-                .document(idDocumento)
+                .document(numeroTarjeta)
                 .set(nuevaTarjeta)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -87,5 +93,4 @@ public class AgregarTarjeta extends AppCompatActivity {
                     }
                 });
     }
-
 }

@@ -2,7 +2,7 @@ package com.example.proyectoblanco;
 
 public class Tarjeta {
     private String numeroTarjeta;
-    private String idDocumento;
+    private String fecha;
 
     public Tarjeta() {
 
@@ -12,16 +12,17 @@ public class Tarjeta {
         this.numeroTarjeta = numeroTarjeta;
     }
 
-    public Tarjeta(String numeroTarjeta, String idDocumento) {
+    public Tarjeta(String numeroTarjeta, String fecha){
         this.numeroTarjeta = numeroTarjeta;
-        this.idDocumento = idDocumento;
+        this.fecha = fecha;
     }
 
     public String getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public String getIdDocumento() {
-        return idDocumento;
+    public String getFecha() {
+        return fecha;
     }
 }
+

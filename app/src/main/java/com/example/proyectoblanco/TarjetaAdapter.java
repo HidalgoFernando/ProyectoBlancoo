@@ -58,7 +58,7 @@ public class TarjetaAdapter extends RecyclerView.Adapter<TarjetaAdapter.TarjetaV
         public void bindTarjeta(Tarjeta tarjeta) {
             numeroTarjetaTextView.setText(tarjeta.getNumeroTarjeta());
 
-            idDocumentoTextView.setText("" + tarjeta.getIdDocumento());
+            idDocumentoTextView.setText("" + tarjeta.getFecha());
         }
     }
 }

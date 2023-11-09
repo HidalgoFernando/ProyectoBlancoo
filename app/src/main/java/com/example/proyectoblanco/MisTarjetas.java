@@ -49,7 +49,7 @@ public class MisTarjetas extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Agrega aquí la lógica para volver al MainActivity
+
                 Intent intent = new Intent(MisTarjetas.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -107,7 +107,7 @@ public class MisTarjetas extends AppCompatActivity {
         // Encuentra y elimina la tarjeta correspondiente en la lista
         for (int i = 0; i < tarjetasList.size(); i++) {
             Tarjeta tarjeta = tarjetasList.get(i);
-            if (tarjeta.getIdDocumento().equals(idDocumento)) {
+            if (tarjeta.getFecha().equals(idDocumento)) {
                 tarjetasList.remove(i);
                 break;
             }

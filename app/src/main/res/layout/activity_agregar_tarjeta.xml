@@ -4,56 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/olaagregartarjeta"
     tools:context=".AgregarTarjeta">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="287dp"
         android:layout_height="51dp"
+        android:fontFamily="@font/abel"
         android:text="Nueva Tarjeta"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textColor="@color/white"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.183" />
 
     <EditText
         android:id="@+id/editTextText3"
-        android:layout_width="276dp"
-        android:layout_height="56dp"
+        android:layout_width="366dp"
+        android:layout_height="81dp"
         android:ems="10"
         android:hint="Tarjeta"
+        android:background="@drawable/style_bordes_edittext"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="123dp"
-        android:layout_height="57dp"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:background="@drawable/btn1"
         android:text="Agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.577" />
+        app:layout_constraintVertical_bias="0.684" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="123dp"
-        android:layout_height="57dp"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
         android:text="Cancelar"
+        android:background="@drawable/btn1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.577" />
+        app:layout_constraintVertical_bias="0.684" />
 </androidx.constraintlayout.widget.ConstraintLayout>

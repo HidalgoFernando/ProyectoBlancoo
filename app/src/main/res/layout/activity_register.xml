@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoregister1"
     tools:context=".Register">
 
     <TextView
@@ -12,12 +13,13 @@
         android:layout_height="28dp"
         android:text="Click si ya tienes cuenta"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.802" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -34,52 +36,58 @@
         android:id="@+id/botonregister"
         android:layout_width="149dp"
         android:layout_height="51dp"
-        android:text="Button"
+        android:text="Crear"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.694" />
 
     <EditText
         android:id="@+id/editTextCorreo2"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
+        android:layout_width="212dp"
+        android:layout_height="61dp"
+        android:background="@drawable/style_bordes_edittext"
         android:ems="10"
         android:hint="Correo"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.402" />
 
     <EditText
         android:id="@+id/editTextContrasena2"
-        android:layout_width="246dp"
-        android:layout_height="49dp"
+        android:layout_width="212dp"
+        android:layout_height="61dp"
+        android:background="@drawable/style_bordes_edittext"
         android:ems="10"
         android:hint="Contrasena"
         android:inputType="textPassword"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintVertical_bias="0.546" />
 
     <TextView
         android:id="@+id/textViewRegister"
-        android:layout_width="185dp"
-        android:layout_height="47dp"
+        android:layout_width="211dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/abel"
         android:text="REGISTER"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textColor="#4c2882"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.136" />
 </androidx.constraintlayout.widget.ConstraintLayout>

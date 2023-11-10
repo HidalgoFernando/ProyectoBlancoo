@@ -108,7 +108,11 @@
         android:id="@+id/imageView4"
         android:layout_width="80dp"
         android:layout_height="76dp"
-        app:srcCompat="@drawable/logoapp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="25dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/logoapp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

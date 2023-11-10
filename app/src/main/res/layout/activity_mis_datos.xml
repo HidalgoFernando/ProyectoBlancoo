@@ -5,85 +5,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/aaas"
     tools:context=".MisDatos">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="248dp"
         android:layout_height="69dp"
+        android:fontFamily="@font/abel"
         android:text="MIS DATOS"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="242dp"
         android:layout_height="59dp"
+        android:background="@drawable/style_bordes_edittext"
         android:ems="10"
         android:hint="Ingresar Nombre"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        android:textColorHint="@color/white"
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="169dp"
-        android:layout_height="51dp"
-        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.722" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <EditText
         android:id="@+id/editTextText2"
         android:layout_width="239dp"
         android:layout_height="55dp"
+        android:background="@drawable/style_bordes_edittext"
         android:ems="10"
         android:hint="Ingresar Apellido"
         android:inputType="text"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="237dp"
-        android:layout_height="61dp"
-        android:ems="10"
-        android:hint="Ingresar Telefono"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="237dp"
         android:layout_height="58dp"
+        android:background="@drawable/style_bordes_edittext"
         android:ems="10"
         android:hint="Ingresar Edad"
         android:inputType="number"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.572" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="237dp"
+        android:layout_height="61dp"
+        android:background="@drawable/style_bordes_edittext"
+        android:ems="10"
+        android:hint="Ingresar Telefono"
+        android:inputType="phone"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.697" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="169dp"
+        android:layout_height="51dp"
+        android:fontFamily="@font/abel"
+        android:text="Crear"
+        android:background="@drawable/btn1"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.825" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="80dp"
+        android:layout_height="76dp"
+        app:srcCompat="@drawable/logoapp"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="25dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

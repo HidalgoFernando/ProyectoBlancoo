@@ -7,7 +7,7 @@ public class Usuario {
     private String telefono;
 
     public Usuario() {
-        // Constructor vacío necesario para Firebase Firestore
+
     }
 
     public Usuario(String nombre, String apellido, int edad, String telefono) {

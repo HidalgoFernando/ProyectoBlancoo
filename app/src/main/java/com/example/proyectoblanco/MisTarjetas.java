@@ -87,7 +87,7 @@ public class MisTarjetas extends AppCompatActivity {
                     }
                 });
     }
-    private void eliminarTarjetaDeSubcoleccion(String numeroTarjeta) {
+            private void eliminarTarjetaDeSubcoleccion(String numeroTarjeta) {
         Toast.makeText(MisTarjetas.this, ("aa : " + numeroTarjeta) , Toast.LENGTH_SHORT).show();
         String correoUsuario = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         DocumentReference tarjetaRef = FirebaseFirestore.getInstance()

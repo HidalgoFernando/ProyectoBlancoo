@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,94 +34,105 @@ public class MisTarjetas extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TarjetaAdapter adapter;
     private List<Tarjeta> tarjetasList;
-    Button volver;
-
+    private Button volver;
+    private OnEliminarTarjetaListener eliminarTarjetaListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_tarjetas);
-
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         tarjetasList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         volver = findViewById(R.id.volverButton);
+        eliminarTarjetaListener = new OnEliminarTarjetaListener() {
+            @Override
+            public void onTarjetaEliminada(String idDocumento) {
+                eliminarTarjetaDeSubcoleccion(idDocumento);
+                eliminarTarjetaDeColeccionPrincipal(idDocumento);
+            }
+        };
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Agrega aquí la lógica para volver al MainActivity
                 Intent intent = new Intent(MisTarjetas.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-
-        MisTarjetas.OnEliminarTarjetaListener eliminarTarjetaListener = new MisTarjetas.OnEliminarTarjetaListener() {
-            @Override
-            public void onTarjetaEliminada(String idDocumento) {
-                // Crear una referencia al documento que se desea eliminar
-                String correoUsuario = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-                DocumentReference tarjetaRef = FirebaseFirestore.getInstance()
-                        .collection("usuarios")
-                        .document(correoUsuario)
-                        .collection("Mis_tarjetas")
-                        .document(idDocumento);
-
-                // Eliminar el documento de Firestore
-                tarjetaRef.delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                // Tarjeta eliminada con éxito
-                                Toast.makeText(MisTarjetas.this, "Tarjeta eliminada", Toast.LENGTH_SHORT).show();
-
-                                // Elimina la tarjeta de la lista y notifica al adaptador
-                                eliminarTarjetaDeLista(idDocumento);
-                                adapter.notifyDataSetChanged();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Ocurrió un error al eliminar la tarjeta
-                                Toast.makeText(MisTarjetas.this, "Error al eliminar la tarjeta", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-
-        };
-
-        // Crea el adaptador y pásale la lista de tarjetas y el listener
         adapter = new TarjetaAdapter(tarjetasList, eliminarTarjetaListener);
         recyclerView.setAdapter(adapter);
 
         obtenerTarjetas();
-
     }
+    private void eliminarTarjetaDeColeccionPrincipal(String numeroTarjeta) {
+        Toast.makeText(MisTarjetas.this, ("aa : " + numeroTarjeta) , Toast.LENGTH_SHORT).show();
 
-
+        DocumentReference tarjetaPrincipalRef = FirebaseFirestore.getInstance()
+                .collection("Tarjetas")
+                .document(numeroTarjeta);
+        tarjetaPrincipalRef.delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Tarjeta eliminada de la colección principal con éxito
+                        Toast.makeText(MisTarjetas.this, "Tarjeta eliminada de la colección principal", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Ocurrió un error al eliminar la tarjeta de la colección principal
+                        Toast.makeText(MisTarjetas.this, "Error al eliminar la tarjeta de la colección principal", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+            private void eliminarTarjetaDeSubcoleccion(String numeroTarjeta) {
+        Toast.makeText(MisTarjetas.this, ("aa : " + numeroTarjeta) , Toast.LENGTH_SHORT).show();
+        String correoUsuario = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        DocumentReference tarjetaRef = FirebaseFirestore.getInstance()
+                .collection("usuarios")
+                .document(correoUsuario)
+                .collection("Mis_Tarjetas")
+                .document(numeroTarjeta);
+        tarjetaRef.delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(MisTarjetas.this, "Tarjeta eliminada de la subcolección", Toast.LENGTH_SHORT).show();
+                        eliminarTarjetaDeLista(numeroTarjeta);
+                        adapter.notifyDataSetChanged();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Ocurrió un error al eliminar la tarjeta de la subcolección
+                        Toast.makeText(MisTarjetas.this, "Error al eliminar la tarjeta de la subcolección", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
     public interface OnEliminarTarjetaListener {
         void onTarjetaEliminada(String idDocumento);
     }
 
-    private void eliminarTarjetaDeLista(String idDocumento) {
+    private void eliminarTarjetaDeLista(String numeroTarjeta) {
         // Encuentra y elimina la tarjeta correspondiente en la lista
         for (int i = 0; i < tarjetasList.size(); i++) {
             Tarjeta tarjeta = tarjetasList.get(i);
-            if (tarjeta.getIdDocumento().equals(idDocumento)) {
+            if (tarjeta.getNumeroTarjeta().equals(numeroTarjeta)) {
                 tarjetasList.remove(i);
                 break;
             }
         }
     }
 
-
     private void obtenerTarjetas() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             String correoUsuario = currentUser.getEmail();
             DocumentReference usuarioRef = db.collection("usuarios").document(correoUsuario);
-            CollectionReference tarjetasRef = usuarioRef.collection("Mis_tarjetas");
+            CollectionReference tarjetasRef = usuarioRef.collection("Mis_Tarjetas");
 
             tarjetasRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override

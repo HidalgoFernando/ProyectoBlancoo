@@ -43,22 +43,22 @@
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/iconImageView" />
             <TextView
-                android:id="@+id/nameTextView"
+                android:id="@+id/numeroTarjetaTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:text=""
                 android:textColor="@android:color/black"
-                android:textSize="24sp"
+                android:textSize="21sp"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/iconImageView"
                 android:layout_alignParentEnd="true" />
             <TextView
-                android:id="@+id/numeroTarjetaTextView"
+                android:id="@+id/fechaTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameTextView"
-                android:layout_alignStart="@+id/nameTextView"
+                android:layout_below="@+id/numeroTarjetaTextView"
+                android:layout_alignStart="@+id/numeroTarjetaTextView"
                 android:layout_marginTop="4dp"
                 android:text=""
                 android:textColor="@android:color/black"

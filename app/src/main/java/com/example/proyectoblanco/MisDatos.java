@@ -39,11 +39,20 @@ public class MisDatos extends AppCompatActivity {
 
                 String nombreText = nombre.getText().toString();
                 String apellidoText = apellido.getText().toString();
-                int edadValue = Integer.parseInt(edad.getText().toString());
+                String edadText = edad.getText().toString();
                 String telefonoText = telefono.getText().toString();
 
-                if (nombreText.isEmpty() || apellidoText.isEmpty() || telefonoText.isEmpty()) {
+                if (nombreText.isEmpty() || apellidoText.isEmpty() || edadText.isEmpty() || telefonoText.isEmpty()) {
                     Toast.makeText(MisDatos.this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int edadValue = 0;
+
+                try {
+                    edadValue = Integer.parseInt(edadText);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(MisDatos.this, "Ingrese una edad válida", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

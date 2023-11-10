@@ -2,26 +2,29 @@ package com.example.proyectoblanco;
 
 public class Tarjeta {
     private String numeroTarjeta;
-    private String idDocumento;
+    private String fecha;
+    private String correoUsuario;
 
     public Tarjeta() {
 
     }
 
-    public Tarjeta(String numeroTarjeta) {
+    public Tarjeta(String numeroTarjeta, String fecha, String correoUsuario) {
         this.numeroTarjeta = numeroTarjeta;
-    }
-
-    public Tarjeta(String numeroTarjeta, String idDocumento) {
-        this.numeroTarjeta = numeroTarjeta;
-        this.idDocumento = idDocumento;
+        this.fecha = fecha;
+        this.correoUsuario = correoUsuario;
     }
 
     public String getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public String getIdDocumento() {
-        return idDocumento;
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getCorreoUsuario() {
+        return correoUsuario;
     }
 }
+

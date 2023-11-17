@@ -11,15 +11,16 @@
         android:id="@+id/VolverRegister"
         android:layout_width="261dp"
         android:layout_height="28dp"
-        android:text="Click si ya tienes cuenta"
+        android:text="Volver al login"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <ProgressBar
         android:id="@+id/progressBar"

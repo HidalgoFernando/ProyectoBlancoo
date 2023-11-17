@@ -11,11 +11,11 @@
         android:id="@+id/VolverLogin"
         android:layout_width="296dp"
         android:layout_height="34dp"
-        android:text="Click si no tienes cuenta"
+        android:text="Registrate Aqui"
 
         android:textAlignment="center"
-        android:textSize="17sp"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

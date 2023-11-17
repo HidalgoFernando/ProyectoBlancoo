@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
         <activity
+            android:name=".miperfil"
+            android:exported="false" />
+        <activity
             android:name=".LectorTarjeta"
             android:exported="false" />
         <activity

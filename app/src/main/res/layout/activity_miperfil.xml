@@ -4,60 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LectorTarjeta">
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="124dp"
-        android:layout_height="51dp"
-        android:text="Leer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="124dp"
-        android:layout_height="51dp"
-        android:text="Volver"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
-
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="238dp"
-        android:layout_height="56dp"
-        android:ems="10"
-        android:hint="..."
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+    tools:context=".miperfil">
 
     <TextView
-        android:id="@+id/nombreTextView"
-        android:layout_width="271dp"
-        android:layout_height="49dp"
+        android:id="@+id/edadTextView2"
+        android:layout_width="275dp"
+        android:layout_height="42dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.626" />
 
     <TextView
-        android:id="@+id/personaTextView"
+        android:id="@+id/personaTextView2"
         android:layout_width="271dp"
         android:layout_height="49dp"
         android:textAlignment="center"
@@ -70,7 +32,31 @@
         app:layout_constraintVertical_bias="0.318" />
 
     <TextView
-        android:id="@+id/apellidoTextView"
+        android:id="@+id/nombreTextView2"
+        android:layout_width="271dp"
+        android:layout_height="49dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="124dp"
+        android:layout_height="51dp"
+        android:text="Cambiar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <TextView
+        android:id="@+id/apellidoTextView2"
         android:layout_width="272dp"
         android:layout_height="49dp"
         android:textAlignment="center"
@@ -81,20 +67,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.532" />
 
-    <TextView
-        android:id="@+id/edadTextView"
-        android:layout_width="275dp"
-        android:layout_height="42dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="124dp"
+        android:layout_height="51dp"
+        android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.888" />
 
     <TextView
-        android:id="@+id/telefonoTextView"
+        android:id="@+id/telefonoTextView2"
         android:layout_width="275dp"
         android:layout_height="40dp"
         android:textAlignment="center"

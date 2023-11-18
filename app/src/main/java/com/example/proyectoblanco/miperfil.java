@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +23,21 @@ public class miperfil extends AppCompatActivity {
     Button cambiar, volver;
     FirebaseAuth auth;
     FirebaseUser usuario;
+
+    ImageView IMG1,IMG2,IMG3,IMG4,IMG5,IMG6;
     private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_miperfil);
+
+        IMG1 = findViewById(R.id.imageView11);
+        IMG2 = findViewById(R.id.imageView14);
+        IMG3 = findViewById(R.id.imageView12);
+        IMG4 = findViewById(R.id.imageView13);
+        IMG5 = findViewById(R.id.imagenFecha);
+        IMG6 = findViewById(R.id.imageView7);
 
         cambiar = findViewById(R.id.button9);
         db = FirebaseFirestore.getInstance();

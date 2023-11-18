@@ -4,20 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/aggtarget"
+    android:background="@drawable/aaas"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/detalles"
-        android:layout_width="257dp"
-        android:layout_height="33dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/Bienvenido"
@@ -31,50 +19,43 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="215dp"
-        android:layout_height="256dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/a461aa900b9a0fc2c3b1533899ed29d0_icono_de_tarjetas_de_visita_de_dinero" />
+        app:layout_constraintVertical_bias="0.147" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="168dp"
-        android:layout_height="53dp"
-        android:background="@drawable/btn1"
-        android:text="Ver mis tarjetas"
+        android:layout_width="198dp"
+        android:layout_height="73dp"
+        android:background="@drawable/dark_blue_neon_button_glowing_neon_button_png"
+        android:text="VER MIS TARJETAS"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintVertical_bias="0.779" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="174dp"
-        android:layout_height="58dp"
-        android:text="Leer Tarjeta"
+        android:layout_width="193dp"
+        android:layout_height="69dp"
+        android:background="@drawable/dark_blue_neon_button_glowing_neon_button_png"
+        android:text="ESCANEAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913" />
+        app:layout_constraintVertical_bias="0.93" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="170dp"
-        android:layout_height="52dp"
-        android:background="@drawable/btn1"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="191dp"
+        android:layout_height="75dp"
+        android:background="@drawable/dark_blue_neon_button_glowing_neon_button_png"
         android:text="Agregar Trajeta"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
@@ -82,28 +63,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.779" />
 
-    <Button
-        android:id="@+id/Deslogear"
-        android:layout_width="151dp"
-        android:layout_height="56dp"
-        android:text="Deslogear"
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="517dp"
+        android:layout_height="258dp"
+        android:layout_marginBottom="652dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914" />
+        app:srcCompat="@drawable/barra_negra" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="104dp"
-        android:layout_height="82dp"
+        android:layout_width="75dp"
+        android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175"
+        app:layout_constraintVertical_bias="0.007"
         app:srcCompat="@drawable/personauser" />
+
+    <TextView
+        android:id="@+id/detalles"
+        android:layout_width="257dp"
+        android:layout_height="33dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:text="dsafsdfsfsfsd" />
+
+    <Button
+        android:id="@+id/Deslogear"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@drawable/_6805"
+        android:backgroundTint="#F6F6F6"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="406dp"
+        android:layout_height="297dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413"
+        app:srcCompat="@drawable/ppp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

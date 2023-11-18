@@ -62,7 +62,7 @@ public class MisDatos extends AppCompatActivity {
 
                 Toast.makeText(MisDatos.this, "Datos Guardados.",
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
